@@ -1,204 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday ❤️</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
+<title>Happy Birthday ❤️</title>
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
+<style>
 
-    body{
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg,#ff758c,#ff7eb3);
-      overflow-x:hidden;
-      text-align:center;
-      color:white;
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-    .container{
-      padding:40px 20px;
-    }
+body{
+font-family:Arial, sans-serif;
+background:linear-gradient(135deg,#ff4e8a,#ff8fb1);
+overflow-x:hidden;
+text-align:center;
+color:white;
+}
 
-    h1{
-      font-size:55px;
-      margin-top:40px;
-      animation: glow 2s infinite alternate;
-    }
+.container{
+padding:40px 20px;
+}
 
-    @keyframes glow{
-      from{
-        text-shadow:0 0 10px white;
-      }
-      to{
-        text-shadow:0 0 25px pink;
-      }
-    }
+h1{
+font-size:55px;
+margin-top:30px;
+animation:glow 2s infinite alternate;
+}
 
-    .message{
-      margin-top:25px;
-      font-size:22px;
-      line-height:1.8;
-    }
+@keyframes glow{
+from{
+text-shadow:0 0 10px white;
+}
+to{
+text-shadow:0 0 25px pink;
+}
+}
 
-    button{
-      margin-top:35px;
-      padding:15px 35px;
-      border:none;
-      border-radius:40px;
-      background:white;
-      color:#ff4f81;
-      font-size:20px;
-      cursor:pointer;
-      transition:0.3s;
-      font-weight:bold;
-    }
+.message{
+margin-top:30px;
+font-size:22px;
+line-height:1.9;
+max-width:900px;
+margin-left:auto;
+margin-right:auto;
+}
 
-    button:hover{
-      transform:scale(1.1);
-    }
+button{
+margin-top:40px;
+padding:18px 40px;
+border:none;
+border-radius:50px;
+font-size:20px;
+font-weight:bold;
+cursor:pointer;
+background:white;
+color:#ff4e8a;
+transition:0.3s;
+}
 
-    #surprise{
-      display:none;
-      margin-top:50px;
-      animation: fade 1s;
-    }
+button:hover{
+transform:scale(1.1);
+}
 
-    @keyframes fade{
-      from{
-        opacity:0;
-      }
-      to{
-        opacity:1;
-      }
-    }
+#surprise{
+display:none;
+margin-top:60px;
+animation:fade 2s;
+}
 
-    .cake{
-      font-size:90px;
-      margin-top:20px;
-    }
+@keyframes fade{
+from{
+opacity:0;
+}
+to{
+opacity:1;
+}
+}
 
-    .love{
-      margin-top:20px;
-      font-size:28px;
-    }
+.countdown{
+font-size:70px;
+margin-top:40px;
+animation:pulse 1s infinite;
+}
 
-    .final{
-      margin-top:40px;
-      font-size:24px;
-      line-height:1.8;
-    }
+@keyframes pulse{
+0%{
+transform:scale(1);
+}
+50%{
+transform:scale(1.2);
+}
+100%{
+transform:scale(1);
+}
+}
 
-    .heart{
-      position:fixed;
-      color:white;
-      font-size:25px;
-      animation: float 5s linear infinite;
-    }
+.final-message{
+font-size:34px;
+margin-top:40px;
+line-height:1.8;
+animation:glow 2s infinite alternate;
+}
 
-    @keyframes float{
-      0%{
-        transform:translateY(100vh);
-        opacity:1;
-      }
+.small-text{
+font-size:24px;
+margin-top:40px;
+line-height:1.8;
+max-width:800px;
+margin-left:auto;
+margin-right:auto;
+}
 
-      100%{
-        transform:translateY(-10vh);
-        opacity:0;
-      }
-    }
+.heart{
+position:fixed;
+font-size:25px;
+animation:float 5s linear infinite;
+}
 
-    img{
-      width:250px;
-      border-radius:25px;
-      margin-top:20px;
-      box-shadow:0 0 20px rgba(255,255,255,0.5);
-    }
+@keyframes float{
+0%{
+transform:translateY(100vh);
+opacity:1;
+}
 
-  </style>
+100%{
+transform:translateY(-10vh);
+opacity:0;
+}
+}
 
+.last-btn{
+margin-top:50px;
+background:#fff;
+color:#ff4e8a;
+}
+
+.popup{
+display:none;
+font-size:35px;
+margin-top:40px;
+animation:fade 1s;
+}
+
+.cat-img{
+width:280px;
+border-radius:25px;
+margin-top:25px;
+box-shadow:0 0 25px rgba(255,255,255,0.7);
+}
+
+</style>
 </head>
+
 <body>
 
-  <div class="container">
+<div class="container">
 
-    <h1>Happy Birthday Tulu ❤️</h1>
+<h1>Happy Birthday Tulu ❤️</h1>
 
-    <p class="message">
-      Tu mara life ni sauthi special person che 💖<br><br>
+<p class="message">
 
-      Tane mali ne mari life beautiful bani gai ✨<br><br>
+I never thought someone could change my life so beautifully,<br>
+but then you came into my world ❤️<br><br>
 
-      Happy Birthday Jaan 🎂❤️
-    </p>
+Since the day you said “yes”,<br>
+every moment with you has become special ✨<br><br>
 
-    <button onclick="showSurprise()">
-      Open Your Surprise 🎁
-    </button>
+You are not just my girlfriend,<br>
+you are my peace, my happiness, and my favorite person 💖<br><br>
 
-    <div id="surprise">
+No matter what happens,<br>
+I just want to stay with you in every lifetime ❤️<br><br>
 
-      <div class="cake">🎂</div>
+Happy Birthday, Betaa 🎂✨<br>
+God bless you always 🤍
 
-      <h2 class="love">
-        I Love You So Much ❤️
-      </h2>
+</p>
 
-      <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif">
+<button onclick="showSurprise()">
+Open Your Surprise 🎁
+</button>
 
-      <p class="final">
+<div id="surprise">
 
-        No matter what happens,<br>
-        I’ll always stay with you ❤️<br><br>
+<p class="small-text">
+Before you came into my life,<br>
+I never knew someone could mean this much to me ❤️
+</p>
 
-        Thank you for coming into my life 💕<br><br>
+<div class="countdown" id="countdown">
+3...
+</div>
 
-        Happy Birthday My Love 🎂✨
+<div class="final-message" id="finalMessage" style="display:none;">
 
-      </p>
+I Love You So Much ❤️<br><br>
 
-    </div>
+<img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif"
+class="cat-img">
 
-  </div>
+<br><br>
 
-  <script>
+In every lifetime,<br>
+in every universe,<br>
+I would still choose only you ❤️
 
-    function showSurprise(){
+</div>
 
-      document.getElementById("surprise").style.display="block";
+<p class="small-text" id="thanks" style="display:none;">
 
-      alert("Happy Birthday My Love ❤️🎂");
+Thank you for staying,<br>
+thank you for loving me,<br>
+and thank you for being the most beautiful part of my life 💖
 
-    }
+</p>
 
-    function createHeart(){
+<button class="last-btn" id="loveBtn" style="display:none;" onclick="showPopup()">
 
-      const heart=document.createElement("div");
+Click here if you love me too ❤️
 
-      heart.classList.add("heart");
+</button>
 
-      heart.innerHTML="❤️";
+<div class="popup" id="popup">
+I knew it 😌❤️
+</div>
 
-      heart.style.left=Math.random()*100+"vw";
+</div>
 
-      heart.style.animationDuration=Math.random()*3+2+"s";
+</div>
 
-      document.body.appendChild(heart);
+<script>
 
-      setTimeout(()=>{
-        heart.remove();
-      },5000);
+function showSurprise(){
 
-    }
+document.getElementById("surprise").style.display="block";
 
-    setInterval(createHeart,300);
+let count=3;
 
-  </script>
+let countdown=document.getElementById("countdown");
+
+let interval=setInterval(()=>{
+
+count--;
+
+if(count>0){
+countdown.innerHTML=count+"...";
+}
+
+else{
+
+clearInterval(interval);
+
+countdown.innerHTML="🎂❤️";
+
+document.getElementById("finalMessage").style.display="block";
+
+document.getElementById("thanks").style.display="block";
+
+document.getElementById("loveBtn").style.display="inline-block";
+
+}
+
+},1000);
+
+}
+
+function showPopup(){
+
+document.getElementById("popup").style.display="block";
+
+}
+
+function createHeart(){
+
+const heart=document.createElement("div");
+
+heart.classList.add("heart");
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDuration=Math.random()*3+2+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},5000);
+
+}
+
+setInterval(createHeart,300);
+
+</script>
 
 </body>
 </html>
