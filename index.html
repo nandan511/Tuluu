@@ -90,6 +90,26 @@
             }
         }
 
+        /* Floating Flowers */
+        .flower {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0;
+            pointer-events: none;
+            animation: float-flower 5s ease-in forwards;
+        }
+
+        @keyframes float-flower {
+            0% {
+                opacity: 1;
+                transform: translateY(0) translateX(0) scale(1) rotate(0deg);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-120vh) translateX(var(--drift)) scale(0.3) rotate(360deg);
+            }
+        }
+
         /* Main Content */
         .content {
             position: relative;
@@ -123,30 +143,34 @@
 
         /* Romantic Text */
         .romantic-text {
-            font-size: clamp(1.2rem, 4vw, 1.8rem);
+            font-size: clamp(1rem, 3.5vw, 1.5rem);
             font-weight: 300;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             color: #ffb6c1;
             text-shadow: 0 0 20px rgba(255, 105, 180, 0.2);
-            max-width: 500px;
-            line-height: 1.6;
+            max-width: 700px;
+            line-height: 1.8;
             animation: fadeInUp 1.2s ease-out;
+            white-space: pre-line;
         }
 
         /* Photo Gallery */
         .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            display: flex;
+            justify-content: center;
+            align-items: center;
             gap: 2rem;
             max-width: 800px;
             width: 100%;
             animation: fadeInUp 1.4s ease-out;
             margin: 2rem 0;
+            flex-wrap: wrap;
         }
 
         .gallery-card {
             position: relative;
-            aspect-ratio: 1;
+            width: 250px;
+            height: 250px;
             border-radius: 20px;
             overflow: hidden;
             cursor: pointer;
@@ -158,7 +182,19 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3rem;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .gallery-card:nth-child(1) { animation-delay: 0s; }
+        .gallery-card:nth-child(2) { animation-delay: 0.5s; }
+        .gallery-card:nth-child(3) { animation-delay: 1s; }
+        .gallery-card:nth-child(4) { animation-delay: 1.5s; }
+
+        .gallery-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .gallery-card:hover {
@@ -169,20 +205,18 @@
             background: rgba(255, 192, 203, 0.2);
         }
 
-        .gallery-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(255, 20, 147, 0.2), transparent);
-            opacity: 0;
-            transition: opacity 0.4s ease;
+        /* Message Section */
+        .message-section {
+            max-width: 700px;
+            animation: fadeInUp 1.8s ease-out;
+            color: #ffb6c1;
+            font-size: clamp(1rem, 3vw, 1.3rem);
+            line-height: 1.8;
+            white-space: pre-line;
         }
 
-        .gallery-card:hover::before {
-            opacity: 1;
+        .message-section p {
+            margin-bottom: 1.5rem;
         }
 
         /* CTA Button */
@@ -199,7 +233,7 @@
             transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             font-weight: 300;
             box-shadow: 0 0 20px rgba(255, 20, 147, 0.1);
-            animation: fadeInUp 1.6s ease-out;
+            animation: fadeInUp 2s ease-out;
             position: relative;
             overflow: hidden;
         }
@@ -386,12 +420,17 @@
             }
 
             .romantic-text {
-                font-size: 1.2rem;
+                font-size: 1rem;
             }
 
             .gallery {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                flex-direction: column;
                 gap: 1rem;
+            }
+
+            .gallery-card {
+                width: 200px;
+                height: 200px;
             }
 
             .surprise-card {
@@ -414,11 +453,12 @@
             }
 
             .romantic-text {
-                font-size: 1rem;
+                font-size: 0.95rem;
             }
 
-            .gallery {
-                grid-template-columns: repeat(2, 1fr);
+            .gallery-card {
+                width: 180px;
+                height: 180px;
             }
 
             .cta-button {
@@ -444,15 +484,46 @@
 
         <!-- Romantic Text -->
         <p class="romantic-text">
-            You are the most beautiful part of my life ❤️
+I never thought someone could change my life so beautifully,
+but then you came into my world ❤️
+
+Since the day you said "yes",
+every moment with you has become special ✨
+
+You are not just my girlfriend,
+you are my peace, my happiness, and my favorite person 💖
+
+No matter what happens,
+I just want to stay with you in every lifetime ❤️
+
+Happy Birthday, Betaa 🎂✨
+God bless you always 🤍
         </p>
 
         <!-- Photo Gallery -->
         <div class="gallery">
-            <div class="gallery-card">💝</div>
-            <div class="gallery-card">✨</div>
-            <div class="gallery-card">🌹</div>
-            <div class="gallery-card">💕</div>
+            <div class="gallery-card">
+                <img src="https://drive.google.com/uc?id=1Xd_fhQDf36_lWM1rywIbC5-kkS_FmFy6" alt="Photo 1">
+            </div>
+            <div class="gallery-card">
+                <img src="https://drive.google.com/uc?id=1QrPgH9SnJCHGW29_5MsJsyRZV1zTaUKh" alt="Photo 2">
+            </div>
+            <div class="gallery-card">
+                <img src="https://drive.google.com/uc?id=1XchN7aREFV2szC2Y5GTmTbQkOgQVyXwM" alt="Photo 3">
+            </div>
+            <div class="gallery-card">
+                <img src="https://drive.google.com/uc?id=1il9fsDN-ISOanQavgUYXPFgjFd7xUqfc" alt="Photo 4">
+            </div>
+        </div>
+
+        <!-- Message Section -->
+        <div class="message-section">
+            <p>Tari mate ak surprise che mari jode pan aapde banne jyare malisu ne college ma atle malse tane betaa so tu kale college aavi jaje ho ne 💕</p>
+            
+            <p>તમારો જીવન હંમેશા ખુશીથી ભરેલો રહે 🌟
+દરેક પળ તમારી સાથે વિશેષ છે ✨
+હું હંમેશા તમારી સાથે છું 💕
+તમે મારી સૌથી મોટી આશીર્વાદ છો 🙏</p>
         </div>
 
         <!-- CTA Button -->
@@ -464,7 +535,7 @@
         <div class="surprise-card" id="surpriseCard">
             <button class="close-button" id="closeBtn">×</button>
             <h2>I Love You So Much ❤️</h2>
-            <img src="https://media.giphy.com/media/JIX9RCntde2l2/giphy.gif" alt="Cute cat">
+            <img src="https://media.giphy.com/media/3oKIPnAiaMCQeKr71e/giphy.gif" alt="Kissing">
         </div>
     </div>
 
@@ -473,46 +544,19 @@
         const audioContext = new (window.AudioContext || window.webkitAudioContext)();
         
         function playBackgroundMusic() {
-            // Create a simple romantic melody using Web Audio API
             const now = audioContext.currentTime;
-            
-            // Piano notes (C major scale)
-            const notes = [261.63, 293.66, 329.63, 349.23, 392.00, 440.00]; // C D E F G A
-            const melodySynth = () => {
-                const osc = audioContext.createOscillator();
-                const gain = audioContext.createGain();
-                
-                osc.connect(gain);
-                gain.connect(audioContext.destination);
-                
-                // Simple romantic melody
-                const sequence = [
-                    {freq: notes[4], start: 0, duration: 0.5}, // G
-                    {freq: notes[5], start: 0.5, duration: 0.5}, // A
-                    {freq: notes[4], start: 1, duration: 0.5}, // G
-                    {freq: notes[2], start: 1.5, duration: 0.5}, // E
-                ];
-                
-                sequence.forEach(note => {
-                    osc.frequency.setTargetAtTime(note.freq, now + note.start, 0.01);
-                    gain.gain.setTargetAtTime(0.1, now + note.start, 0.01);
-                    gain.gain.setTargetAtTime(0, now + note.start + note.duration - 0.1, 0.1);
-                });
-                
-                osc.start(now);
-                osc.stop(now + 2);
-            };
+            const notes = [261.63, 293.66, 329.63, 349.23, 392.00, 440.00];
             
             // Play ambient pad
             const pad = audioContext.createOscillator();
             const padGain = audioContext.createGain();
             pad.type = 'sine';
-            pad.frequency.value = 110; // A2
+            pad.frequency.value = 110;
             pad.connect(padGain);
             padGain.connect(audioContext.destination);
             padGain.gain.setValueAtTime(0.05, now);
             pad.start(now);
-            pad.stop(now + 2);
+            pad.stop(now + 3);
         }
 
         // Create floating particles
@@ -566,6 +610,30 @@
             }, duration * 1000);
         }
 
+        // Create floating flowers
+        function createFloatingFlower() {
+            const container = document.getElementById('heartsContainer');
+            const flower = document.createElement('div');
+            flower.className = 'flower';
+            const flowers = ['🌹', '🌸', '🌺', '💐', '🌻'];
+            flower.textContent = flowers[Math.floor(Math.random() * flowers.length)];
+            
+            const left = Math.random() * 100;
+            const duration = Math.random() * 2 + 4;
+            const drift = (Math.random() - 0.5) * 250;
+            
+            flower.style.left = left + '%';
+            flower.style.bottom = '-50px';
+            flower.style.setProperty('--drift', drift + 'px');
+            flower.style.animationDuration = duration + 's';
+            
+            container.appendChild(flower);
+            
+            setTimeout(() => {
+                flower.remove();
+            }, duration * 1000);
+        }
+
         // Surprise button functionality
         document.getElementById('surpriseBtn').addEventListener('click', () => {
             const overlay = document.getElementById('overlay');
@@ -578,9 +646,12 @@
             
             playBackgroundMusic();
             
-            // Emit hearts on surprise
-            for (let i = 0; i < 15; i++) {
+            // Emit hearts and flowers on surprise
+            for (let i = 0; i < 20; i++) {
                 setTimeout(() => createFloatingHeart(), i * 100);
+            }
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => createFloatingFlower(), i * 150);
             }
         });
 
@@ -607,7 +678,8 @@
             createParticles();
             
             // Create floating hearts continuously
-            setInterval(createFloatingHeart, 2000);
+            setInterval(createFloatingHeart, 3000);
+            setInterval(createFloatingFlower, 4000);
         });
 
         // Responsive particle count on resize
