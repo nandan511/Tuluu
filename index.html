@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Happy Birthday tenii ❤️</title>
+<title>Happy Birthday ❤️</title>
 
 <style>
 
@@ -15,7 +15,7 @@ box-sizing:border-box;
 }
 
 body{
-font-family:Arial, sans-serif;
+font-family:Arial,sans-serif;
 background:linear-gradient(135deg,#ff4e8a,#ff8fb1);
 overflow-x:hidden;
 text-align:center;
@@ -24,43 +24,66 @@ color:white;
 
 .container{
 padding:40px 20px;
+position:relative;
+z-index:2;
 }
 
 h1{
-font-size:55px;
-margin-top:30px;
+font-size:60px;
+margin-top:20px;
 animation:glow 2s infinite alternate;
 }
 
 @keyframes glow{
+
 from{
 text-shadow:0 0 10px white;
 }
+
 to{
-text-shadow:0 0 25px pink;
+text-shadow:0 0 30px pink;
 }
+
 }
 
 .message{
 margin-top:30px;
-font-size:22px;
+font-size:24px;
 line-height:1.9;
 max-width:900px;
 margin-left:auto;
 margin-right:auto;
 }
 
+.photos{
+margin-top:40px;
+}
+
+.photos img{
+
+width:240px;
+height:240px;
+object-fit:cover;
+border-radius:25px;
+margin:15px;
+box-shadow:0 0 25px rgba(255,255,255,0.7);
+animation:glow 2s infinite alternate;
+
+}
+
 button{
+
 margin-top:40px;
 padding:18px 40px;
 border:none;
 border-radius:50px;
-font-size:20px;
+font-size:22px;
 font-weight:bold;
 cursor:pointer;
 background:white;
 color:#ff4e8a;
 transition:0.3s;
+
 }
 
 button:hover{
@@ -74,30 +97,37 @@ animation:fade 2s;
 }
 
 @keyframes fade{
+
 from{
 opacity:0;
 }
+
 to{
 opacity:1;
 }
+
 }
 
 .countdown{
-font-size:70px;
+font-size:80px;
 margin-top:40px;
 animation:pulse 1s infinite;
 }
 
 @keyframes pulse{
+
 0%{
 transform:scale(1);
 }
+
 50%{
 transform:scale(1.2);
 }
+
 100%{
 transform:scale(1);
 }
+
 }
 
 .final-message{
@@ -111,18 +141,42 @@ animation:glow 2s infinite alternate;
 font-size:24px;
 margin-top:40px;
 line-height:1.8;
-max-width:800px;
+max-width:900px;
 margin-left:auto;
 margin-right:auto;
 }
 
+.cat-img{
+width:300px;
+border-radius:25px;
+margin-top:25px;
+box-shadow:0 0 25px rgba(255,255,255,0.7);
+}
+
+.last-btn{
+margin-top:50px;
+background:white;
+color:#ff4e8a;
+}
+
+.popup{
+display:none;
+font-size:40px;
+margin-top:40px;
+animation:fade 1s;
+}
+
 .heart{
+
 position:fixed;
 font-size:25px;
 animation:float 5s linear infinite;
+z-index:1;
+
 }
 
 @keyframes float{
+
 0%{
 transform:translateY(100vh);
 opacity:1;
@@ -132,32 +186,42 @@ opacity:1;
 transform:translateY(-10vh);
 opacity:0;
 }
+
 }
 
-.last-btn{
-margin-top:50px;
-background:#fff;
-color:#ff4e8a;
+.balloon{
+
+position:fixed;
+bottom:-100px;
+font-size:40px;
+animation:balloon 10s linear infinite;
+z-index:1;
+
 }
 
-.popup{
-display:none;
-font-size:35px;
-margin-top:40px;
-animation:fade 1s;
+@keyframes balloon{
+
+0%{
+transform:translateY(0);
+opacity:1;
 }
 
-.cat-img{
-width:280px;
-border-radius:25px;
-margin-top:25px;
-box-shadow:0 0 25px rgba(255,255,255,0.7);
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+
 }
 
 </style>
+
 </head>
 
 <body>
+
+<audio autoplay loop>
+<source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+</audio>
 
 <div class="container">
 
@@ -182,19 +246,35 @@ God bless you always 🤍
 
 </p>
 
+<div class="photos">
+
+<img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=600">
+
+<img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=600">
+
+<img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?q=80&w=600">
+
+</div>
+
 <button onclick="showSurprise()">
+
 Open Your Surprise 🎁
+
 </button>
 
 <div id="surprise">
 
 <p class="small-text">
+
 Before you came into my life,<br>
 I never knew someone could mean this much to me ❤️
+
 </p>
 
 <div class="countdown" id="countdown">
+
 3...
+
 </div>
 
 <div class="final-message" id="finalMessage" style="display:none;">
@@ -227,7 +307,9 @@ Click here if you love me too ❤️
 </button>
 
 <div class="popup" id="popup">
+
 I knew it 😌❤️
+
 </div>
 
 </div>
@@ -249,7 +331,9 @@ let interval=setInterval(()=>{
 count--;
 
 if(count>0){
+
 countdown.innerHTML=count+"...";
+
 }
 
 else{
@@ -291,12 +375,38 @@ heart.style.animationDuration=Math.random()*3+2+"s";
 document.body.appendChild(heart);
 
 setTimeout(()=>{
+
 heart.remove();
+
 },5000);
 
 }
 
 setInterval(createHeart,300);
+
+function createBalloon(){
+
+const balloon=document.createElement("div");
+
+balloon.classList.add("balloon");
+
+balloon.innerHTML="🎈";
+
+balloon.style.left=Math.random()*100+"vw";
+
+balloon.style.animationDuration=Math.random()*5+5+"s";
+
+document.body.appendChild(balloon);
+
+setTimeout(()=>{
+
+balloon.remove();
+
+},10000);
+
+}
+
+setInterval(createBalloon,1200);
 
 </script>
 
