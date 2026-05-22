@@ -6,6 +6,8 @@
 
 <title>Happy Birthday ❤️</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
 
 *{
@@ -15,163 +17,147 @@ box-sizing:border-box;
 }
 
 body{
-font-family:Arial,sans-serif;
-background:linear-gradient(135deg,#ff4e8a,#ff8fb1);
+font-family:'Poppins',sans-serif;
+height:100vh;
 overflow-x:hidden;
-text-align:center;
+background:linear-gradient(135deg,#1f1c2c,#ff4e8a);
+display:flex;
+justify-content:center;
+align-items:center;
 color:white;
+position:relative;
 }
 
 .container{
-padding:40px 20px;
-position:relative;
+
+width:90%;
+max-width:950px;
+padding:40px;
+border-radius:35px;
+backdrop-filter:blur(15px);
+background:rgba(255,255,255,0.08);
+box-shadow:0 0 40px rgba(255,255,255,0.15);
+text-align:center;
 z-index:2;
+
 }
 
 h1{
-font-size:60px;
-margin-top:20px;
-animation:glow 2s infinite alternate;
-}
 
-@keyframes glow{
-
-from{
-text-shadow:0 0 10px white;
-}
-
-to{
-text-shadow:0 0 30px pink;
-}
+font-size:58px;
+margin-bottom:25px;
+font-weight:600;
+text-shadow:0 0 20px rgba(255,255,255,0.7);
 
 }
 
 .message{
-margin-top:30px;
-font-size:24px;
+
+font-size:22px;
 line-height:1.9;
-max-width:900px;
-margin-left:auto;
-margin-right:auto;
+color:#f5f5f5;
+
 }
 
 .photos{
+
 margin-top:40px;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:20px;
+
 }
 
 .photos img{
 
-width:240px;
+width:220px;
 height:240px;
 object-fit:cover;
 border-radius:25px;
-margin:15px;
-box-shadow:0 0 25px rgba(255,255,255,0.7);
-animation:glow 2s infinite alternate;
+transition:0.4s;
+box-shadow:0 0 25px rgba(255,255,255,0.2);
+
+}
+
+.photos img:hover{
+
+transform:translateY(-10px) scale(1.03);
+box-shadow:0 0 35px rgba(255,255,255,0.6);
 
 }
 
 button{
 
-margin-top:40px;
+margin-top:45px;
 padding:18px 40px;
 border:none;
 border-radius:50px;
-font-size:22px;
-font-weight:bold;
+background:rgba(255,255,255,0.15);
+color:white;
+font-size:20px;
+font-weight:600;
 cursor:pointer;
-background:white;
-color:#ff4e8a;
-transition:0.3s;
+backdrop-filter:blur(10px);
+transition:0.4s;
+box-shadow:0 0 20px rgba(255,255,255,0.15);
 
 }
 
 button:hover{
-transform:scale(1.1);
+
+transform:scale(1.08);
+background:white;
+color:#ff4e8a;
+
 }
 
 #surprise{
+
 display:none;
-margin-top:60px;
-animation:fade 2s;
+margin-top:50px;
+animation:fade 1.5s ease;
+
 }
 
 @keyframes fade{
 
 from{
 opacity:0;
+transform:translateY(30px);
 }
 
 to{
 opacity:1;
+transform:translateY(0);
 }
 
 }
 
-.countdown{
-font-size:80px;
-margin-top:40px;
-animation:pulse 1s infinite;
-}
+.final-text{
 
-@keyframes pulse{
-
-0%{
-transform:scale(1);
-}
-
-50%{
-transform:scale(1.2);
-}
-
-100%{
-transform:scale(1);
-}
-
-}
-
-.final-message{
-font-size:34px;
-margin-top:40px;
+font-size:38px;
+font-weight:600;
 line-height:1.8;
-animation:glow 2s infinite alternate;
+text-shadow:0 0 20px rgba(255,255,255,0.5);
+
 }
 
-.small-text{
-font-size:24px;
-margin-top:40px;
-line-height:1.8;
-max-width:900px;
-margin-left:auto;
-margin-right:auto;
-}
+.cat{
 
-.cat-img{
 width:300px;
-border-radius:25px;
-margin-top:25px;
-box-shadow:0 0 25px rgba(255,255,255,0.7);
-}
+margin-top:30px;
+border-radius:30px;
+box-shadow:0 0 35px rgba(255,255,255,0.4);
 
-.last-btn{
-margin-top:50px;
-background:white;
-color:#ff4e8a;
-}
-
-.popup{
-display:none;
-font-size:40px;
-margin-top:40px;
-animation:fade 1s;
 }
 
 .heart{
 
-position:fixed;
-font-size:25px;
-animation:float 5s linear infinite;
-z-index:1;
+position:absolute;
+font-size:22px;
+animation:float 6s linear infinite;
+opacity:0.8;
 
 }
 
@@ -179,6 +165,10 @@ z-index:1;
 
 0%{
 transform:translateY(100vh);
+opacity:0;
+}
+
+20%{
 opacity:1;
 }
 
@@ -191,15 +181,15 @@ opacity:0;
 
 .balloon{
 
-position:fixed;
+position:absolute;
+font-size:45px;
 bottom:-100px;
-font-size:40px;
-animation:balloon 10s linear infinite;
-z-index:1;
+animation:balloonFloat 10s linear infinite;
+cursor:pointer;
 
 }
 
-@keyframes balloon{
+@keyframes balloonFloat{
 
 0%{
 transform:translateY(0);
@@ -213,6 +203,26 @@ opacity:0;
 
 }
 
+.pop{
+
+animation:pop 0.3s forwards;
+
+}
+
+@keyframes pop{
+
+0%{
+transform:scale(1);
+opacity:1;
+}
+
+100%{
+transform:scale(2);
+opacity:0;
+}
+
+}
+
 </style>
 
 </head>
@@ -220,7 +230,9 @@ opacity:0;
 <body>
 
 <audio autoplay loop>
-<source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=romantic-love-11786.mp3" type="audio/mpeg">
+
 </audio>
 
 <div class="container">
@@ -229,88 +241,39 @@ opacity:0;
 
 <p class="message">
 
-I never thought someone could change my life so beautifully,<br>
-but then you came into my world ❤️<br><br>
+You are the most beautiful part of my life ❤️<br><br>
 
-Since the day you said “yes”,<br>
-every moment with you has become special ✨<br><br>
-
-You are not just my girlfriend,<br>
-you are my peace, my happiness, and my favorite person 💖<br><br>
-
-No matter what happens,<br>
-I just want to stay with you in every lifetime ❤️<br><br>
-
-Happy Birthday, Betaa 🎂✨<br>
-God bless you always 🤍
+Since the day you came into my world,<br>
+everything feels more beautiful ✨
 
 </p>
 
 <div class="photos">
 
-<img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=600">
+<img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=800">
 
-<img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=600">
+<img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?q=80&w=800">
 
-<img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?q=80&w=600">
+<img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=800">
 
 </div>
 
 <button onclick="showSurprise()">
 
-Open Your Surprise 🎁
+Open Your Surprise ✨
 
 </button>
 
 <div id="surprise">
 
-<p class="small-text">
+<div class="final-text">
 
-Before you came into my life,<br>
-I never knew someone could mean this much to me ❤️
-
-</p>
-
-<div class="countdown" id="countdown">
-
-3...
+I Love You So Much ❤️
 
 </div>
-
-<div class="final-message" id="finalMessage" style="display:none;">
-
-I Love You So Much ❤️<br><br>
 
 <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif"
-class="cat-img">
-
-<br><br>
-
-In every lifetime,<br>
-in every universe,<br>
-I would still choose only you ❤️
-
-</div>
-
-<p class="small-text" id="thanks" style="display:none;">
-
-Thank you for staying,<br>
-thank you for loving me,<br>
-and thank you for being the most beautiful part of my life 💖
-
-</p>
-
-<button class="last-btn" id="loveBtn" style="display:none;" onclick="showPopup()">
-
-Click here if you love me too ❤️
-
-</button>
-
-<div class="popup" id="popup">
-
-I knew it 😌❤️
-
-</div>
+class="cat">
 
 </div>
 
@@ -321,42 +284,6 @@ I knew it 😌❤️
 function showSurprise(){
 
 document.getElementById("surprise").style.display="block";
-
-let count=3;
-
-let countdown=document.getElementById("countdown");
-
-let interval=setInterval(()=>{
-
-count--;
-
-if(count>0){
-
-countdown.innerHTML=count+"...";
-
-}
-
-else{
-
-clearInterval(interval);
-
-countdown.innerHTML="🎂❤️";
-
-document.getElementById("finalMessage").style.display="block";
-
-document.getElementById("thanks").style.display="block";
-
-document.getElementById("loveBtn").style.display="inline-block";
-
-}
-
-},1000);
-
-}
-
-function showPopup(){
-
-document.getElementById("popup").style.display="block";
 
 }
 
@@ -370,7 +297,7 @@ heart.innerHTML="❤️";
 
 heart.style.left=Math.random()*100+"vw";
 
-heart.style.animationDuration=Math.random()*3+2+"s";
+heart.style.animationDuration=Math.random()*3+3+"s";
 
 document.body.appendChild(heart);
 
@@ -378,11 +305,11 @@ setTimeout(()=>{
 
 heart.remove();
 
-},5000);
+},6000);
 
 }
 
-setInterval(createHeart,300);
+setInterval(createHeart,350);
 
 function createBalloon(){
 
@@ -394,7 +321,13 @@ balloon.innerHTML="🎈";
 
 balloon.style.left=Math.random()*100+"vw";
 
-balloon.style.animationDuration=Math.random()*5+5+"s";
+balloon.style.animationDuration=Math.random()*5+6+"s";
+
+balloon.onclick=function(){
+
+balloon.classList.add("pop");
+
+};
 
 document.body.appendChild(balloon);
 
@@ -406,7 +339,7 @@ balloon.remove();
 
 }
 
-setInterval(createBalloon,1200);
+setInterval(createBalloon,1400);
 
 </script>
 
